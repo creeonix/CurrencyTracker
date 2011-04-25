@@ -6,6 +6,7 @@ html {
 }
 
 body { 
+  position: relative;
   margin: 0px auto;
   padding: 5px 20px;
 
@@ -36,6 +37,8 @@ div.field, div.actions {
   margin-bottom: 10px;
 }
 
+/* Tables */
+
 table {
   margin: 0px;
   padding: 0px;
@@ -56,6 +59,8 @@ table td {
   padding: 5px;
   border: 1px solid #999;
 }
+
+/* Flash Notices / Errors */
 
 #notice {
   color: green;
@@ -90,4 +95,50 @@ table td {
 #error_explanation ul li {
   font-size: 12px;
   list-style: square;
+}
+
+/* Header / Nav */
+body header {
+  font-size: 1.2em;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+
+  list-style-type: none;
+  display: inline;
+}
+
+nav ul li {
+  display: inline;
+}
+
+body header nav {
+  position: absolute;
+  top: -1px;
+  right: 20px;
+}
+
+body header nav ul li {
+  border: 1px solid #333;
+  padding: 10px;
+  background: #333;
+}
+
+body header nav ul li:hover {
+  background: #666;
+}
+
+body header nav ul li a:link,
+body header nav ul li a:visited {
+  color: #FFF;
+  text-decoration: none;
+}
+
+body header nav ul li a:hover,
+body header nav ul li a:active {
+  color: #FFF;
+  text-decoration: none;
+  background: none;
 }

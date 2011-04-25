@@ -8,6 +8,16 @@
 </head>
 <body>
 
+<header>
+  <h1>CurrencyTracker</h1>
+  <nav>
+    <ul>
+      <li><%= link_to "Currencies", currencies_path %></li>
+      <li><%= link_to "Countries", countries_path %></li>
+    </ul>
+  </nav>
+</header>
+
 <%= yield %>
 
 </body>
