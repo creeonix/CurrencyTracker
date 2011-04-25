@@ -12,6 +12,8 @@ module NavigationHelpers
       '/'
     when /the new country page/
       new_country_path
+    when /the countries page/
+      countries_path
     when /a country page/
       country_path(Country.create!(:name => "Test Country", :code => "tc"))
     when /a country edit page/
