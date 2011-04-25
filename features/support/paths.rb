@@ -10,6 +10,13 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
+    when /the new country page/
+      new_country_path
+    when /a country page/
+      country_path(Country.create!(:name => "Test Country", :code => "tc"))
+    when /a country edit page/
+      edit_country_path(Country.create!(:name => "Test Country #{Time.now.to_i}", :code => Time.now.to_s))
+
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
