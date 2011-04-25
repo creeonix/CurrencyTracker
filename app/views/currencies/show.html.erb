@@ -11,6 +11,11 @@
 </p>
 
 <p>
+  <b>Status:</b>
+  <%= @currency.collected? ? 'Collected' : 'Not Collected' %>
+</p>
+
+<p>
   <b>Country:</b>
   <%= @currency.country.nil? ? 'None' : link_to(@currency.country.name, @currency.country) %>
 </p>
