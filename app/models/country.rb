@@ -8,6 +8,8 @@ class Country < ActiveRecord::Base
 
   has_many :currencies
 
+  accepts_nested_attributes_for :currencies, :allow_destroy => true
+
   scope :visited, :conditions => { :visited => true }
   scope :not_visited, :conditions => { :visited => false }
 end
