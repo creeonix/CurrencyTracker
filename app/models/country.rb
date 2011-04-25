@@ -1,6 +1,6 @@
 class Country < ActiveRecord::Base
   set_primary_key :code
-  attr_accessible :name, :code
+  attr_accessible :name, :code, :visited
 
   validates_presence_of :name
   validates_presence_of :code

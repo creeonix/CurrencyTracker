@@ -11,6 +11,11 @@
 </p>
 
 <p>
+  <b>Status:</b>
+  <%= @country.visited? ? 'Visited' : 'Not Visited' %>
+</p>
+
+<p>
   <b>Currencies:</b>
   <ul>
     <% @country.currencies.each do |currency| %>

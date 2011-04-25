@@ -7,4 +7,8 @@ class Currency < ActiveRecord::Base
   validates_uniqueness_of :code, :allow_blank => true
 
   belongs_to :country
+
+  def collected?
+    country.nil? ? false : country.visited?
+  end
 end

@@ -4,7 +4,7 @@
   <tr>
     <th>Name</th>
     <th>Code</th>
-    <th></th>
+    <th>Status</th>
     <th></th>
     <th></th>
   </tr>
@@ -13,6 +13,7 @@
   <tr>
     <td><%= currency.name %></td>
     <td><%= currency.code %></td>
+    <td><%= currency.collected? ? 'Collected' : 'Not Collected' %></td>
     <td><%= link_to 'Show', currency %></td>
     <td><%= link_to 'Edit', edit_currency_path(currency) %></td>
   </tr>
