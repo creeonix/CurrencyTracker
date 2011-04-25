@@ -1,6 +1,8 @@
 require 'test_helper'
 
 class CurrenciesControllerTest < ActionController::TestCase
+  should_not_respond_to_actions :new => :get, :destroy => :get
+
   setup do
     @currency = currencies(:one)
   end
@@ -9,11 +11,6 @@ class CurrenciesControllerTest < ActionController::TestCase
     get :index
     assert_response :success
     assert_not_nil assigns(:currencies)
-  end
-
-  test "should get new" do
-    get :new
-    assert_response :success
   end
 
   test "should create currency" do
@@ -45,13 +42,5 @@ class CurrenciesControllerTest < ActionController::TestCase
   test "should update currency" do
     put :update, :id => @currency.to_param, :currency => @currency.attributes
     assert_redirected_to currency_path(assigns(:currency))
-  end
-
-  test "should destroy currency" do
-    assert_difference('Currency.count', -1) do
-      delete :destroy, :id => @currency.to_param
-    end
-
-    assert_redirected_to currencies_path
   end
 end

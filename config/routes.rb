@@ -1,9 +1,9 @@
 CurrencyTracker::Application.routes.draw do
   root :to => "currencies#index"
   
-  resources :countries
+  resources :countries, :except => [:new, :destroy]
 
-  resources :currencies
+  resources :currencies, :except => [:new, :destroy]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

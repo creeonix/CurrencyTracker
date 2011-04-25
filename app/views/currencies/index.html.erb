@@ -15,11 +15,6 @@
     <td><%= currency.code %></td>
     <td><%= link_to 'Show', currency %></td>
     <td><%= link_to 'Edit', edit_currency_path(currency) %></td>
-    <td><%= link_to 'Destroy', currency, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Currency', new_currency_path %>

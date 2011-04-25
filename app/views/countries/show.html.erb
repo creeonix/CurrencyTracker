@@ -10,6 +10,14 @@
   <%= @country.code %>
 </p>
 
+<p>
+  <b>Currencies:</b>
+  <ul>
+    <% @country.currencies.each do |currency| %>
+      <li><%= link_to currency.name, currency %></li>
+    <% end %>
+  </ul>
+</p>
 
 <%= link_to 'Edit', edit_country_path(@country) %> |
 <%= link_to 'Back', countries_path %>

@@ -21,17 +21,6 @@ class CountriesController < ApplicationController
     end
   end
 
-  # GET /countries/new
-  # GET /countries/new.xml
-  def new
-    @country = Country.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @country }
-    end
-  end
-
   # GET /countries/1/edit
   def edit
     @country = Country.find(params[:id])
@@ -66,18 +55,6 @@ class CountriesController < ApplicationController
         format.html { render :action => "edit" }
         format.xml  { render :xml => @country.errors, :status => :unprocessable_entity }
       end
-    end
-  end
-
-  # DELETE /countries/1
-  # DELETE /countries/1.xml
-  def destroy
-    @country = Country.find(params[:id])
-    @country.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(countries_url) }
-      format.xml  { head :ok }
     end
   end
 end

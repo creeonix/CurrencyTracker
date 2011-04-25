@@ -1,6 +1,8 @@
 require 'test_helper'
 
 class CountriesControllerTest < ActionController::TestCase
+  should_not_respond_to_actions :new => :get, :destroy => :get
+
   setup do
     @country = countries(:one)
   end
@@ -9,11 +11,6 @@ class CountriesControllerTest < ActionController::TestCase
     get :index
     assert_response :success
     assert_not_nil assigns(:countries)
-  end
-
-  test "should get new" do
-    get :new
-    assert_response :success
   end
 
   test "should create country" do
@@ -45,13 +42,5 @@ class CountriesControllerTest < ActionController::TestCase
   test "should update country" do
     put :update, :id => @country.to_param, :country => @country.attributes
     assert_redirected_to country_path(assigns(:country))
-  end
-
-  test "should destroy country" do
-    assert_difference('Country.count', -1) do
-      delete :destroy, :id => @country.to_param
-    end
-
-    assert_redirected_to countries_path
   end
 end

@@ -21,17 +21,6 @@ class CurrenciesController < ApplicationController
     end
   end
 
-  # GET /currencies/new
-  # GET /currencies/new.xml
-  def new
-    @currency = Currency.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @currency }
-    end
-  end
-
   # GET /currencies/1/edit
   def edit
     @currency = Currency.find(params[:id])
@@ -66,18 +55,6 @@ class CurrenciesController < ApplicationController
         format.html { render :action => "edit" }
         format.xml  { render :xml => @currency.errors, :status => :unprocessable_entity }
       end
-    end
-  end
-
-  # DELETE /currencies/1
-  # DELETE /currencies/1.xml
-  def destroy
-    @currency = Currency.find(params[:id])
-    @currency.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(currencies_url) }
-      format.xml  { head :ok }
     end
   end
 end

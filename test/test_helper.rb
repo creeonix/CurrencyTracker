@@ -9,6 +9,16 @@ class ActiveSupport::TestCase
   # -- they do not yet inherit this setting
   fixtures :all
 
+  def self.should_not_respond_to_actions(actions = {})
+    actions.each do |name, method|
+      test "should not respond to #{method.to_s.upcase} :#{name}" do
+        assert_raise ActionController::RoutingError do
+          send(method, name)
+        end
+      end
+    end
+  end
+
   def self.test_validates_presence_of(*attributes)
     attributes.each do |attribute|
       test "validates_presence_of #{attribute}" do
