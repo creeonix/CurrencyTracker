@@ -22,5 +22,7 @@ CurrencyTracker::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
-end
 
+  # Don't use the real Web Service, use the seed data.
+  USE_STATIC_DATA = true
+end
