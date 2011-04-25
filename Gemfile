@@ -7,4 +7,7 @@ gem 'nokogiri'
 
 group :development do
   gem 'cucumber'
+  gem 'cucumber-rails'
+  gem 'capybara'
+  gem 'database_cleaner'
 end
