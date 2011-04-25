@@ -19,7 +19,6 @@
       <th>Code</th>
       <th>Status</th>
       <th></th>
-      <th></th>
     </tr>
 
   <% @currencies.each do |currency| %>
@@ -28,7 +27,6 @@
       <td><%= currency.code %></td>
       <td><%= currency.collected? ? 'Collected' : 'Not Collected' %></td>
       <td><%= link_to 'Show', currency %></td>
-      <td><%= link_to 'Edit', edit_currency_path(currency) %></td>
     </tr>
   <% end %>
   </table>

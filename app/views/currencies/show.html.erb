@@ -15,5 +15,4 @@
   <%= @currency.country.nil? ? 'None' : link_to(@currency.country.name, @currency.country) %>
 </p>
 
-<%= link_to 'Edit', edit_currency_path(@currency) %> |
 <%= link_to 'Back', currencies_path %>

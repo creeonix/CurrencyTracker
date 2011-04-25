@@ -20,41 +20,4 @@ class CurrenciesController < ApplicationController
       format.xml  { render :xml => @currency }
     end
   end
-
-  # GET /currencies/1/edit
-  def edit
-    @currency = Currency.find(params[:id])
-  end
-
-  # POST /currencies
-  # POST /currencies.xml
-  def create
-    @currency = Currency.new(params[:currency])
-
-    respond_to do |format|
-      if @currency.save
-        format.html { redirect_to(@currency, :notice => 'Currency was successfully created.') }
-        format.xml  { render :xml => @currency, :status => :created, :location => @currency }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @currency.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-
-  # PUT /currencies/1
-  # PUT /currencies/1.xml
-  def update
-    @currency = Currency.find(params[:id])
-
-    respond_to do |format|
-      if @currency.update_attributes(params[:currency])
-        format.html { redirect_to(@currency, :notice => 'Currency was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @currency.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
 end
