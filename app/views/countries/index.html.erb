@@ -1,21 +1,35 @@
-<h1>Countries</h1>
+<section>
+  <div id="visited_countries_chart" class="simple_pie_chart" width='300px' height='100px'>
+    <table>
+      <tr>
+        <th>Visited</th>
+        <td><%= Country.visited.count %></td>
+      </tr><tr>
+        <th>Not Visited</th>
+        <td><%= Country.not_visited.count %></td>
+      </tr>
+    </table>
+  </div>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Code</th>
-    <th>Status</th>
-    <th></th>
-    <th></th>
-  </tr>
+  <h1>Countries</h1>
 
-<% @countries.each do |country| %>
-  <tr>
-    <td><%= country.name %></td>
-    <td><%= country.code %></td>
-    <td><%= country.visited? ? 'Visited' : 'Not Visited' %></td>
-    <td><%= link_to 'Show', country %></td>
-    <td><%= link_to 'Edit', edit_country_path(country) %></td>
-  </tr>
-<% end %>
-</table>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Code</th>
+      <th>Status</th>
+      <th></th>
+      <th></th>
+    </tr>
+
+  <% @countries.each do |country| %>
+    <tr>
+      <td><%= country.name %></td>
+      <td><%= country.code %></td>
+      <td><%= country.visited? ? 'Visited' : 'Not Visited' %></td>
+      <td><%= link_to 'Show', country %></td>
+      <td><%= link_to 'Edit', edit_country_path(country) %></td>
+    </tr>
+  <% end %>
+  </table>
+</section>

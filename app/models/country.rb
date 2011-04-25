@@ -7,4 +7,7 @@ class Country < ActiveRecord::Base
   validates_uniqueness_of :code, :allow_blank => true
 
   has_many :currencies
+
+  scope :visited, :conditions => { :visited => true }
+  scope :not_visited, :conditions => { :visited => false }
 end
